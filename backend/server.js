@@ -26,12 +26,18 @@ app.get('/', (req, res) => {
 	res.send('Hello from server')
 })
 
+// Låtsas att detta kommer från en databas
 const books = [
-	{}
+	{ title: 'JavaScript: the good parts' },// eslint-disable-line no-script-url
+	{ title: 'Den oändliga historien' },
+	{ title: 'Sagan om ringen' },
+	{ title: 'Kometen kommer' },
+	{ title: 'The sun also rises', author: 'Ernest Hemingway' },
+	{ title: 'Anne Franks dagbok' }
 ]
 
-app.get('/api/products', (req, res) => {
-	res.send(products)
+app.get('/api/books', (req, res) => {
+	res.send(books)
 })
 
 
